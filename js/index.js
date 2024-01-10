@@ -1,3 +1,28 @@
+const data = [
+    { date: '21 июня', time: '18:00', place: 'Стадион1', left: 'Зенит', right: 'Спартак' },
+    { date: '22 июня', time: '19:00', place: 'Стадион2', left: 'Зенит2', right: 'Спартак' },
+    { date: '23 июня', time: '20:00', place: 'Стадион3', left: 'Зенит3', right: 'Спартак' },
+    { date: '24 июня', time: '21:00', place: 'Стадион4', left: 'Зенит4', right: 'Спартак' },
+    { date: '25 июня', time: '22:00', place: 'Стадион5', left: 'Зенит5', right: 'Спартак' },
+]
+
+function addFromData() {
+    const slideInfo = document.querySelectorAll('.slide');
+    let i = 0;
+    slideInfo.forEach((element) => {
+        function nameDataItem(varName) {
+            element.querySelector(`.item-${varName}`).textContent = data[i][varName];
+        }
+        nameDataItem('left');
+        nameDataItem('right');
+        nameDataItem('place');
+        nameDataItem('date');
+        nameDataItem('time');
+        i++;
+    })
+}
+addFromData()
+
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.slide');
 
